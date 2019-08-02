@@ -28,7 +28,7 @@ namespace Teste
             for (int i = 0; i < n; i++)
             {
                 Console.WriteLine();
-                Console.WriteLine($"Enter #{0} contract data: ", (i + 1)); //$ interpolação
+                Console.WriteLine($"Enter #{i + 1} contract data: "); //$ interpolação
                 Console.Write("Date contract: ");
                 DateTime date = DateTime.Parse(Console.ReadLine());
                 Console.Write("Value per hour: ");
@@ -40,13 +40,13 @@ namespace Teste
             }
 
             Console.WriteLine();
-            Console.WriteLine("Enter with mounth and year to calculate income (MM/YYYY");
+            Console.WriteLine("Enter with mounth and year to calculate income (MM/YYYY)");
             string dateContract = Console.ReadLine();
             int mount = int.Parse(dateContract.Substring(0, 2)); //leu a data, posição zero, com dois tamanhos (mês)
             int year = int.Parse(dateContract.Substring(3, 4));
             Console.WriteLine("Name: " + worker.Name);
             Console.WriteLine("Departament: " + worker.Departament.Name);
-            Console.WriteLine("Incame for {0}/{1}: {2}", mount, year, worker.Incame(year, mount).ToString("F2", CultureInfo.InvariantCulture));
+            Console.WriteLine("Incame for " + mount + "/" + year + ":" + worker.Incame(year, mount).ToString("F2", CultureInfo.InvariantCulture));
         }
     }
 }
